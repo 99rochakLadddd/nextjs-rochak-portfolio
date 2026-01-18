@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bgAnimation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background: #1d1d1d;
+    filter: saturate(2);
+    overflow: hidden;
+    z-index: -1; 
+    transition: background-color 0.5s;
+}
+
+#themeToggle {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    color: #ffffff;
+}
+.about-me {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    position: fixed;
+    top: 20px;
+    right: 90px;
+    z-index: 10;
+    color: #ffffff;
+}
+
+.colorBox{
+    z-index: 2;
+    filter: brightness(1.1);
+    transition: 2s ease;
+    position: relative;
+    margin: 2px;
+    background: #1d1d1d;
+}
+
+.colorBox:hover{
+    background:  #2c2d2d1d;
+    transition-duration: 0s;
+}
+
+.backgroundAmim{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #00bfff;
+    filter: blur(60px);
+    animation: animBack 6s linear infinite;
+}
+
+@keyframes animBack {
+    0%{
+        top: -60px;
+    }
+    100%{
+        top: 120%;
+    }
+}
+
+.home {
+    background-color: transparent;
+    z-index: 100;
+    position: relative;
+    user-select: none;
+    margin-top: 110px;
+    display: block;
+}
+
+.navbar-div h2 {
+    font-size: 30px;
+    font-family: 'Play', sans-serif;
+    color: white !important;
+    z-index: 12;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.navbar-div .my-img {
+    border-radius: 100%;
+    background-color: #1A1A1A;
+}
+
+.navbar-div .text {
+    overflow: hidden;
+    font-size: 21px;
+    font-family: 'rosmatika', sans-serif;
+    font-weight: 700;
+    white-space: nowrap;
+    border-right: 4px solid #fff;
+}
+.write {
+    border-right: 4px solid #fff;
+    font-family: 'Play', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+    color: #00bfff;
+  }
+
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #fff; /* Adjust this color to your preference */
+    }
+  }
+.my-intro {
+    color: #B1B3B9;
+    font-weight: 700;
+    font-family: 'Play', sans-serif;
+}
+
+.menu-open-button {
+    animation: heartbeat 1s infinite;
+}
+
+/* <-----modal------> */
+.modal-dialog {
+
+}
+.modal-content {
+    color: white;
+    height: 400px;
+    background: #171717;
+    transition: 1s ease-in-out;
+    clip-path: polygon(
+      30px 0%,
+      100% 0,
+      100% calc(100% - 30px),
+      calc(100% - 30px) 100%,
+      0 100%,
+      0% 30px
+    );
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+}
+.modal-header {
+    border-bottom: none;
+    color: white !important;
+
+}
+.modal-backdrop.fade {
+    opacity: 0;
+    z-index: 10;
+}
+
+.cvc-pharmacy-img {
+    border-radius: 100%;
+    object-fit: contain;
+    width: 300px;
+    height: 200px;
+}
+.modal-header .btn-close {
+    color: white !important;
+    background-color: white;
+    opacity: 1;
+    margin-bottom: 120px;
+    margin-bottom: 0;
+    
+}
+.card-updated {
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+    background-color: #171717;
+    color: white;
+    font-family: 'play', sans-serif;
+}
+.card-updated .my-story {
+    color: #03BFFF;
+}
+
+.about-me {
+    background-color: transparent;
+    border: 2px solid rgb(146, 143, 143);
+    border-radius: 10px;
+    font-size: 12x;
+    font-family: 'play', sans-serif;
+    color: #03BFFF;
+}
+.about-me .btn {
+    font-family: 'play', sans-serif;
+    color: #03BFFF;
+}
+
+
+.light-modes {
+    background-color: #e2e8f0;
+    color: #1a202c;
+}
+
+/* Smooth 3D tilt hover */
+.new-bg-for-icon-div {
+  transform-style: preserve-3d;  /* enable 3D */
+  perspective: 1000px;            /* depth */
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.new-bg-for-icon-div:hover {
+  transform: rotateX(5deg) rotateY(10deg) translateY(-5px) scale(1.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Glow effect: pulsating box shadow */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+  }
+}
+
+
+/* Glow effect */
+.skill-icon-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+
+.new-bg-for-icon-div {
+  background: linear-gradient(135deg, rgba(204, 46, 46, 0.1), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.font-rosmatika {
+  font-family: 'play', sans-serif;
+  display: inline-block; 
+  background: #505050d4;
+  margin-bottom: 20px;
+  color: #00bfff;
+  padding: 10px 20px ;
+
+}
+
+.font-play {
+  font-family: 'play', sans-serif;
+}
