@@ -46,11 +46,26 @@ export default function Home() {
         </main>
       </div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start">
+          <div data-aos="fade-up" data-aos-delay="200">
             <SkillsSection />
+          </div>
+          <div data-aos="fade-up" data-aos-delay="400">
             <ProjectsSection />
+          </div>
+          <div data-aos="fade-up" data-aos-delay="600">
             <ExperienceSection />
+          </div>
+          <div data-aos="fade-up" data-aos-delay="800">
             <ContactSection />
           </div>
-    </div>
+        </div>
+           <footer>
+            <div className="mx-auto max-w-6xl px-4 text-center text-sm text-muted-foreground sm:px-6 lg:px-8">
+              <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+            </div>
+          </footer>
+      </div>
+      
+
   );
 }

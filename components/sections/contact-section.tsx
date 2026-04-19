@@ -47,7 +47,7 @@ export function ContactSection() {
               <div className="text-2xl text-foreground">{contact.icon}</div>
               <div className="flex flex-col">
                 <span className="font-semibold text-foreground">{contact.label}</span>
-                <span className="text-sm text-muted-foreground break-all">
+                <span className="text-sm text-muted-foreground break-all text-white">
                   {contact.display}
                 </span>
               </div>
